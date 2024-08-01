@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic jQuery</title>
+    <!-- by using this link we can use google jquery libraries -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<!-- type your jQuery code in a script tag in under body -->
+<script>
+    // use jQuery or $ to access DOM elements like body like this  jQuery("body")
+    // document without quotations to catch the page's first loading 
+    // .ready is for checking if the page we want to check is ready 
+    // we use the function to tell when the document is ready do this function
+    // as soon as the page is loaded on the user's browser target the html element with $("html")
+    // .append insert content to the end of each element in the set of matched elements
+    // making a continuous string and to continue to the next line we use back slash "\"
+    // use single quotations for ids so it does not interfere with double quotes
+    // 
+    $(document).ready(function() {
+        $("html").append(
+            "<body>\
+                <div id='container'>\
+                    <div id='inner'>\
+                        <h1>Basic jQuery</h1>\
+                        <p id='1'>Paragraph 1</p>\
+                        <p id='2'>Paragraph 2</p>\
+                        <p id='3'>Paragraph 3</p>\
+                    </div>\
+                </div>\
+            </body>"
+        );
+        // to change the fonts of paragraphs with targeting p tags &b making "p" class
+        //  then using .css() to access css and styling and set with opening {}
+        // the property like color using "" then : then the attribute "red"
+        // if we need to just change the color of one paragraph we need to set id for paragraphs
+        // and use # before id name instead of  $("p").css({"color":"red"});
+        $("#2").css({"color":"red"});
+        // Now we want paragraph 3 to be hid when clicked on 
+        // then we can add how we want it to hide like fading either in the .hide("fade")
+        // or by using .fadeOut() 
+        $("#3").click(function() {
+            $('h1').fadeOut();
+        });
+    });
+</script>
+    
+    
+
+</html>
